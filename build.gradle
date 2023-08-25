@@ -21,10 +21,6 @@ subprojects {
     group = 'org.cabradati'
     version = '20.0'
 
-    jar {
-        destinationDirectory.set(file("../../server/plugins"))
-    }
-
     dependencies {
         implementation 'io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT'
         testImplementation 'io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT'

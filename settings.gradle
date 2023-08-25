@@ -5,3 +5,6 @@ project(':holdentities').projectDir = file('./projetos/holdentities')
 
 include('module-dicontainer')
 project(':module-dicontainer').projectDir = file('./modulos/dicontainer')
+
+include('module-generalutils')
+project(':module-generalutils').projectDir = file('./modulos/general-utils')

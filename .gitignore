@@ -2,3 +2,5 @@
 .gradle
 build
 server/plugins
+**/build
+**/out

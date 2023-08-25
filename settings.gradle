@@ -1,0 +1,7 @@
+rootProject.name = 'minecraft-plugin'
+
+include('holdentities')
+project(':holdentities').projectDir = file('./projetos/holdentities')
+
+include('module-dicontainer')
+project(':module-dicontainer').projectDir = file('./modulos/dicontainer')

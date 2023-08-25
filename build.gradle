@@ -1,0 +1,44 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.9.0'
+    id 'java-library'
+    id 'pmd'
+    id 'maven-publish'
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        maven {
+            url = "https://repo.papermc.io/repository/maven-public/"
+        }
+    }
+}
+
+subprojects {
+    apply plugin: 'org.jetbrains.kotlin.jvm'
+    apply plugin: 'java-library'
+
+    group = 'org.cabradati'
+    version = '20.0'
+
+    jar {
+        destinationDirectory.set(file("../../server/plugins"))
+    }
+
+    dependencies {
+        implementation 'io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT'
+        testImplementation 'io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT'
+
+        testImplementation 'org.jetbrains.kotlin:kotlin-test'
+        testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    kotlin {
+        jvmToolchain(17)
+    }
+
+}

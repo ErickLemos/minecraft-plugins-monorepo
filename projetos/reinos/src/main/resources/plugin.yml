@@ -16,3 +16,7 @@ commands:
   remover-reino:
     description: remover reino
     usage: /<command>
+
+  adicionar-alianca:
+    description: adicionar alianca ao reino
+    usage: /<command>

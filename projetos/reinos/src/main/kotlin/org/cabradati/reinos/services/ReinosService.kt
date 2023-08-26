@@ -18,6 +18,12 @@ class ReinosService {
             .get()
     }
 
+    fun getByLider(uid: String): ApiFuture<QuerySnapshot> {
+        return firestore.collection(collection)
+            .whereEqualTo("uidPlayerLider", uid)
+            .get()
+    }
+
     fun add(reino: Reino): ApiFuture<DocumentReference>? {
         return firestore.collection(collection)
             .add(reino)

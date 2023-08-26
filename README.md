@@ -26,3 +26,8 @@ O processo de inicio e desenvolvimento:
   realizou no desenvolvimento.
 - dentro do console do servidor digite "reload confirm" para recarregar os plugins com as novas
   modificações que realizou.
+
+## Plugins
+
+- HoldEntities
+- [Reinos](./docs/plugin-reinos.md)

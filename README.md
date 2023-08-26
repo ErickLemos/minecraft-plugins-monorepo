@@ -17,7 +17,7 @@ Os passos para configurar este projetos são:
 - baixar arquivo de credenciais do Google Cloud.
 - declarar variavel de ambiente (GOOGLE_APPLICATION_CREDENTIALS) apontando para o Arquivo baixado.
 
-O processo de desenvolvimento:
+O processo de inicio e desenvolvimento:
 
 - você deve executar o script *boot.sh* que fica dentro da pasta server, isso fará
   o servidor iniciar.

@@ -6,5 +6,6 @@ project(':holdentities').projectDir = file('./plugins/holdentities')
 include('reinos')
 project(':reinos').projectDir = file('./plugins/reinos')
 
+/*
 include('seasons')
-project(':seasons').projectDir = file("./plugins/seasons")
+project(':seasons').projectDir = file("./plugins/seasons")*/

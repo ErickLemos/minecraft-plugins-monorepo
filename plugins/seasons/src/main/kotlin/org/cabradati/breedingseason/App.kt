@@ -1,5 +1,6 @@
 package org.cabradati.breedingseason
 
+import org.bukkit.event.entity.EntityPortalEnterEvent
 import org.bukkit.plugin.java.JavaPlugin
 import org.cabradati.breedingseason.estacoes.inverno.EstacaoInvernoContainer
 import org.cabradati.breedingseason.models.EstacaoType
@@ -45,6 +46,8 @@ class App : JavaPlugin() {
             }
 
         }
+
+        EntityPortalEnterEvent.getHandlerList()
 
         saveConfig()
 

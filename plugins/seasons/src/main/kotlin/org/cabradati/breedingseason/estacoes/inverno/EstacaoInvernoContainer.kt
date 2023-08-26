@@ -1,6 +1,8 @@
 package org.cabradati.breedingseason.estacoes.inverno
 
 import org.bukkit.entity.EntityType
+import org.bukkit.event.HandlerList
+import org.bukkit.event.block.BlockBreakEvent
 import org.cabradati.breedingseason.DIContainer
 import org.cabradati.breedingseason.estacoes.inverno.events.CancelarPescaEvent
 import org.cabradati.breedingseason.estacoes.inverno.events.CancelarSpawnEvent

@@ -24,7 +24,7 @@ class ReinosService {
             .get()
     }
 
-    fun add(reino: Reino): ApiFuture<DocumentReference>? {
+    fun add(reino: Reino): ApiFuture<DocumentReference> {
         return firestore.collection(collection)
             .add(reino)
     }

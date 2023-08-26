@@ -2,3 +2,7 @@ dependencies {
     implementation project(":module-dicontainer")
     implementation project(":module-generalutils")
 }
+
+jar {
+    destinationDirectory.set(file("../../server/plugins"))
+}

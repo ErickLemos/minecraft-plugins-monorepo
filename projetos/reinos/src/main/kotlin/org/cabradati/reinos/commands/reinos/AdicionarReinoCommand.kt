@@ -1,4 +1,4 @@
-package org.cabradati.reinos.commands
+package org.cabradati.reinos.commands.reinos
 
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor

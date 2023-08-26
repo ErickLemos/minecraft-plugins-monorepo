@@ -1,16 +1,17 @@
-package org.cabradati.reinos.commands
+package org.cabradati.reinos.commands.aliancas
 
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
-import org.cabradati.reinos.models.Alianca
 import org.cabradati.reinos.models.Reino
 import org.cabradati.reinos.services.ReinosService
+import org.cabradati.reinos.services.SolicitacaoAliancaService
 
-class AdicionarAliancaCommand : CommandExecutor {
+class EnviarSolicitacaoAliancaCommand : CommandExecutor {
 
     private val reinosService = ReinosService()
+    private val solicitacaoAliancaService = SolicitacaoAliancaService()
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
         if (sender !is Player) return false
@@ -34,8 +35,12 @@ class AdicionarAliancaCommand : CommandExecutor {
             sender.sendMessage("reino informado não existe")
         }
 
-        val reinoSolicitante = reinoSolicitanteRef.documents[0]
-            .toObject(Reino::class.java)
+        solicitacaoAliancaService.enviarSolicitacao(
+            reinoSolicitanteRef.documents[0].id,
+            reinoConvidadoRef.documents[0].id
+        )
+
+        sender.sendMessage("solicitacao enviada com sucesso")
 
         return true
     }

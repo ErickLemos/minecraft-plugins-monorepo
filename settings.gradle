@@ -3,6 +3,9 @@ rootProject.name = 'minecraft-plugin'
 include('holdentities')
 project(':holdentities').projectDir = file('./projetos/holdentities')
 
+include('reinos')
+project(':reinos').projectDir = file('./projetos/reinos')
+
 include('module-dicontainer')
 project(':module-dicontainer').projectDir = file('./modulos/dicontainer')
 

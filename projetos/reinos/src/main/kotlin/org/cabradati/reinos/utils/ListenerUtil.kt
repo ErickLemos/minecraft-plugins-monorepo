@@ -1,4 +1,4 @@
-package org.cabradati.generalutils
+package org.cabradati.reinos.utils
 
 import org.bukkit.event.Listener
 

@@ -2,9 +2,9 @@ package org.cabradati.holdentities
 
 import org.bukkit.entity.EntityType
 import org.bukkit.plugin.java.JavaPlugin
-import org.cabradati.dicontainer.DIContainer
 import org.cabradati.holdentities.events.HoldEntityEvent
 import org.cabradati.holdentities.events.LeaveEntity
+import org.cabradati.holdentities.utils.DIContainer
 
 class App : JavaPlugin() {
 

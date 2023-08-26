@@ -5,8 +5,11 @@ import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
 import org.cabradati.reinos.services.ReinosService
+import org.cabradati.reinos.utils.DIContainer
 
-class RemoverReinoCommand : CommandExecutor {
+class RemoverReinoCommand(
+    private val diContainer: DIContainer
+) : CommandExecutor {
 
     private val reinosService = ReinosService()
 

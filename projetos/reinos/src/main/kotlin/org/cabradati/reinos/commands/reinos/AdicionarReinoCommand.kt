@@ -6,8 +6,11 @@ import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
 import org.cabradati.reinos.models.Reino
 import org.cabradati.reinos.services.ReinosService
+import org.cabradati.reinos.utils.DIContainer
 
-class AdicionarReinoCommand : CommandExecutor {
+class AdicionarReinoCommand(
+    private val diContainer: DIContainer
+) : CommandExecutor {
 
     private val reinosService = ReinosService()
 

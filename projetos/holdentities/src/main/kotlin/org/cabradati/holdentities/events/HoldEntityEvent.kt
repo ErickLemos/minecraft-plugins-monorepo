@@ -3,10 +3,10 @@ package org.cabradati.holdentities.events
 import org.bukkit.event.EventHandler
 import org.bukkit.event.EventPriority
 import org.bukkit.event.player.PlayerInteractEntityEvent
-import org.cabradati.dicontainer.DIContainer
-import org.cabradati.generalutils.ListenerUtil
 import org.cabradati.holdentities.App
 import org.cabradati.holdentities.extensions.canHold
+import org.cabradati.holdentities.utils.DIContainer
+import org.cabradati.holdentities.utils.ListenerUtil
 
 class HoldEntityEvent(
     private val diContainer: DIContainer

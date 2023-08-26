@@ -1,4 +1,4 @@
-package org.cabradati.dicontainer
+package org.cabradati.holdentities.utils
 
 import org.bukkit.Server
 import org.bukkit.configuration.file.FileConfiguration

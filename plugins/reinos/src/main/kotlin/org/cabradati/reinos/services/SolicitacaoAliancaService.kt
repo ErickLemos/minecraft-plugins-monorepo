@@ -9,7 +9,7 @@ import org.cabradati.reinos.models.enums.StatusSolicitacao
 
 class SolicitacaoAliancaService {
 
-    private val collection = "soliticacoes_alianca"
+    private val collection = "reinos_soliticacoes_alianca"
     private val firestore = FirestoreClient.getFirestore()
 
     fun getSolicitacoesByReinoSolicitante(uid: String): ApiFuture<QuerySnapshot> {

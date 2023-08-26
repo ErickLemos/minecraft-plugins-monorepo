@@ -1,44 +1,34 @@
 package org.cabradati.reinos
 
-import com.google.auth.oauth2.GoogleCredentials
-import com.google.common.eventbus.EventBus
-import com.google.firebase.FirebaseApp
-import com.google.firebase.FirebaseOptions
 import org.bukkit.plugin.java.JavaPlugin
 import org.cabradati.reinos.commands.aliancas.EnviarSolicitacaoAliancaCommand
 import org.cabradati.reinos.commands.reinos.AdicionarReinoCommand
 import org.cabradati.reinos.commands.reinos.RemoverReinoCommand
-import org.cabradati.reinos.subscribers.PluginInitializationSubscriber
-import org.cabradati.reinos.subscribers.events.PluginInitializationEvent
-import org.cabradati.reinos.utils.DIContainer
+import org.cabradati.reinos.eventbus.events.PluginInitializationEvent
+import org.cabradati.reinos.eventbus.subscribers.PluginInitializationSubscriber
+import org.cabradati.reinos.eventbus.utils.enviarEvento
+import org.cabradati.reinos.eventbus.utils.registrarSubscriber
+import org.cabradati.reinos.utils.inicializarFirebase
+import org.cabradati.reinos.utils.registrarComando
+import org.cabradati.reinos.utils.setPluginContainerDI
 
 
 class App : JavaPlugin() {
 
-    private val eventBus = EventBus()
+    init {
+        inicializarFirebase()
+        setPluginContainerDI(this)
+    }
 
     override fun onEnable() {
 
-        FirebaseApp.initializeApp(
-            FirebaseOptions.builder()
-                .setCredentials(GoogleCredentials.getApplicationDefault())
-                .build()
-        )
+        registrarComando("adicionar-reino", AdicionarReinoCommand())
+        registrarComando("adicionar-reino", AdicionarReinoCommand())
+        registrarComando("remover-reino", RemoverReinoCommand())
+        registrarComando("adicionar-alianca", EnviarSolicitacaoAliancaCommand())
 
-        val diContainer = DIContainer(
-            this,
-            server,
-            config,
-            logger
-        )
-
-        getCommand("adicionar-reino")?.setExecutor(AdicionarReinoCommand(diContainer))
-        getCommand("remover-reino")?.setExecutor(RemoverReinoCommand(diContainer))
-        getCommand("adicionar-alianca")?.setExecutor(EnviarSolicitacaoAliancaCommand(diContainer))
-
-
-        eventBus.register(PluginInitializationSubscriber())
-        eventBus.post(PluginInitializationEvent())
+        registrarSubscriber(PluginInitializationSubscriber())
+        enviarEvento(PluginInitializationEvent())
 
         super.onEnable()
 

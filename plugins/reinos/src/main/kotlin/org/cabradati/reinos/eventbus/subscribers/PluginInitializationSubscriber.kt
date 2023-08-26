@@ -1,7 +1,8 @@
-package org.cabradati.reinos.subscribers
+package org.cabradati.reinos.eventbus.subscribers
 
 import com.google.common.eventbus.Subscribe
-import org.cabradati.reinos.subscribers.events.PluginInitializationEvent
+import org.cabradati.reinos.eventbus.events.PluginInitializationEvent
+import org.cabradati.reinos.eventbus.utils.Subscriber
 
 class PluginInitializationSubscriber : Subscriber<PluginInitializationEvent> {
 

@@ -1,0 +1,8 @@
+author: Erick Lemos
+name: BreedingSeason
+version: 20.0
+main: org.cabradati.breedingseason.App
+api-version: 1.20
+load: STARTUP
+libraries:
+  - org.jetbrains.kotlin:kotlin-stdlib:1.7.20

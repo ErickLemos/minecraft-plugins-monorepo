@@ -1,7 +1,10 @@
 rootProject.name = 'minecraft-plugin'
 
 include('holdentities')
-project(':holdentities').projectDir = file('./projetos/holdentities')
+project(':holdentities').projectDir = file('./plugins/holdentities')
 
 include('reinos')
-project(':reinos').projectDir = file('./projetos/reinos')
+project(':reinos').projectDir = file('./plugins/reinos')
+
+include('seasons')
+project(':seasons').projectDir = file("./plugins/seasons")

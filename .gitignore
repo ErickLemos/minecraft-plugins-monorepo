@@ -4,3 +4,4 @@ build
 server/plugins
 **/build
 **/out
+**/google-services.json

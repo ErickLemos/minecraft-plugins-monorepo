@@ -4,9 +4,14 @@ import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
+import org.cabradati.reinos.eventbus.events.MensagemChatEvent
+import org.cabradati.reinos.eventbus.utils.enviarEvento
+import org.cabradati.reinos.models.reino.Reino
 import org.cabradati.reinos.models.solicitacaoalianca.SolicitacaoAlianca
 import org.cabradati.reinos.services.ReinosService
 import org.cabradati.reinos.services.SolicitacaoAliancaService
+import org.cabradati.reinos.utils.info
+import java.util.*
 
 class EnviarSolicitacaoAliancaCommand : CommandExecutor {
 
@@ -42,6 +47,16 @@ class EnviarSolicitacaoAliancaCommand : CommandExecutor {
         )
 
         solicitacaoAliancaService.enviarSolicitacao(solicitacaoAlianca)
+
+        val uidPlayerMensagem = reinoConvidadoRef.documents[0]
+            .toObject(Reino::class.java)
+            .uidPlayerLider
+
+        info("[ESAC-001] enviando mensagem para player lider do reino: $uidPlayerMensagem")
+        enviarEvento(MensagemChatEvent(
+            mensagem = "seu reino recebeu uma solicitação de aliança",
+            uidDestinatario = UUID.fromString(uidPlayerMensagem)
+        ))
 
         sender.sendMessage("solicitacao enviada com sucesso")
 

@@ -1,7 +1,7 @@
 package org.cabradati.reinos.eventbus.utils
 
 import com.google.common.eventbus.EventBus
-import org.cabradati.reinos.eventbus.events.MensagemEvent
+import org.cabradati.reinos.eventbus.events.LogEvent
 
 private val eventBus = EventBus()
 
@@ -14,5 +14,5 @@ fun enviarEvento(evento: Evento) {
 }
 
 fun enviarEventoLog(mensagem: String) {
-    enviarEvento(MensagemEvent(mensagem))
+    enviarEvento(LogEvent(mensagem))
 }

@@ -5,7 +5,8 @@ import org.cabradati.reinos.commands.aliancas.ConsultarSolicitacaoAliancaCommand
 import org.cabradati.reinos.commands.aliancas.EnviarSolicitacaoAliancaCommand
 import org.cabradati.reinos.commands.reinos.AdicionarReinoCommand
 import org.cabradati.reinos.commands.reinos.RemoverReinoCommand
-import org.cabradati.reinos.eventbus.subscribers.MensagemEventSubscriber
+import org.cabradati.reinos.eventbus.subscribers.LogEventSubscriber
+import org.cabradati.reinos.eventbus.subscribers.MensagemChatEventSubscriber
 import org.cabradati.reinos.eventbus.utils.enviarEventoLog
 import org.cabradati.reinos.eventbus.utils.registrarSubscriber
 import org.cabradati.reinos.utils.di.setPluginContainerDI
@@ -28,7 +29,8 @@ class App : JavaPlugin() {
         registrarComando("enviar-convite-de-alianca", EnviarSolicitacaoAliancaCommand())
         registrarComando("consultar-convites-de-alianca", ConsultarSolicitacaoAliancaCommand())
 
-        registrarSubscriber(MensagemEventSubscriber())
+        registrarSubscriber(LogEventSubscriber())
+        registrarSubscriber(MensagemChatEventSubscriber())
         enviarEventoLog("aplicacao iniciada com sucesso")
 
         super.onEnable()

@@ -5,22 +5,19 @@ import com.google.cloud.firestore.annotation.PropertyName
 
 data class Reino(
 
-    @DocumentId
-    var uid: String = "",
-
     @PropertyName("uid_player_lider")
-    val uidPlayerLider: String = "",
+    var uidPlayerLider: String = "",
 
     @PropertyName("nome")
-    val nome: String = "",
+    var nome: String = "",
 
     @PropertyName("aliancas")
-    val aliancas: List<Alianca> = listOf(),
+    var aliancas: List<Alianca> = listOf(),
 
     @PropertyName("guerras")
-    val guerras: List<Guerra> = listOf(),
+    var guerras: List<Guerra> = listOf(),
 
     @PropertyName("membros")
-    val membros: List<Membro> = listOf()
+    var membros: List<Membro> = listOf()
 
 )

@@ -1,4 +1,4 @@
-package org.cabradati.reinos.models
+package org.cabradati.reinos.models.reino
 
 import com.google.cloud.firestore.annotation.DocumentId
 import com.google.cloud.firestore.annotation.PropertyName

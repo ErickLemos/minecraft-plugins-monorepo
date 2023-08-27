@@ -5,7 +5,7 @@ import com.google.cloud.firestore.DocumentReference
 import com.google.cloud.firestore.QuerySnapshot
 import com.google.cloud.firestore.WriteResult
 import com.google.firebase.cloud.FirestoreClient
-import org.cabradati.reinos.models.Reino
+import org.cabradati.reinos.models.reino.Reino
 
 class ReinosService {
 

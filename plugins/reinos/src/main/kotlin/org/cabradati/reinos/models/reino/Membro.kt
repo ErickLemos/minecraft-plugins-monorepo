@@ -1,4 +1,4 @@
-package org.cabradati.reinos.models
+package org.cabradati.reinos.models.reino
 
 class Membro(
     val uidPlayer: String = ""

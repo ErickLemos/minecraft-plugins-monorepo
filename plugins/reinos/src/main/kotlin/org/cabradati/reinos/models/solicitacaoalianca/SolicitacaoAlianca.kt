@@ -1,7 +1,6 @@
-package org.cabradati.reinos.models
+package org.cabradati.reinos.models.solicitacaoalianca
 
 import com.google.gson.annotations.SerializedName
-import org.cabradati.reinos.models.enums.StatusSolicitacao
 
 data class SolicitacaoAlianca(
 

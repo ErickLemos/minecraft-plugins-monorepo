@@ -1,4 +1,4 @@
-package org.cabradati.reinos.models.enums
+package org.cabradati.reinos.models.solicitacaoalianca
 
 enum class StatusSolicitacao(
     status: String

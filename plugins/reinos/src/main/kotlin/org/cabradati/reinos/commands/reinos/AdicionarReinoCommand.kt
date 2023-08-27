@@ -4,7 +4,7 @@ import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
-import org.cabradati.reinos.models.Reino
+import org.cabradati.reinos.models.reino.Reino
 import org.cabradati.reinos.services.ReinosService
 
 class AdicionarReinoCommand : CommandExecutor {

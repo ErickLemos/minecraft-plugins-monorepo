@@ -4,8 +4,7 @@ import com.google.api.core.ApiFuture
 import com.google.cloud.firestore.DocumentReference
 import com.google.cloud.firestore.QuerySnapshot
 import com.google.firebase.cloud.FirestoreClient
-import org.cabradati.reinos.models.SolicitacaoAlianca
-import org.cabradati.reinos.models.enums.StatusSolicitacao
+import org.cabradati.reinos.models.solicitacaoalianca.SolicitacaoAlianca
 
 class SolicitacaoAliancaService {
 

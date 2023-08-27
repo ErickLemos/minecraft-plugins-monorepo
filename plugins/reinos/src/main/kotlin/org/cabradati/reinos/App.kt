@@ -5,9 +5,8 @@ import org.cabradati.reinos.commands.aliancas.ConsultarSolicitacaoAliancaCommand
 import org.cabradati.reinos.commands.aliancas.EnviarSolicitacaoAliancaCommand
 import org.cabradati.reinos.commands.reinos.AdicionarReinoCommand
 import org.cabradati.reinos.commands.reinos.RemoverReinoCommand
-import org.cabradati.reinos.eventbus.events.PluginInitializationEvent
-import org.cabradati.reinos.eventbus.subscribers.PluginInitializationSubscriber
-import org.cabradati.reinos.eventbus.utils.enviarEvento
+import org.cabradati.reinos.eventbus.subscribers.MensagemEventSubscriber
+import org.cabradati.reinos.eventbus.utils.enviarEventoLog
 import org.cabradati.reinos.eventbus.utils.registrarSubscriber
 import org.cabradati.reinos.utils.di.setPluginContainerDI
 import org.cabradati.reinos.utils.inicializarFirebase
@@ -29,8 +28,8 @@ class App : JavaPlugin() {
         registrarComando("enviar-convite-de-alianca", EnviarSolicitacaoAliancaCommand())
         registrarComando("consultar-convites-de-alianca", ConsultarSolicitacaoAliancaCommand())
 
-        registrarSubscriber(PluginInitializationSubscriber())
-        enviarEvento(PluginInitializationEvent())
+        registrarSubscriber(MensagemEventSubscriber())
+        enviarEventoLog("aplicacao iniciada com sucesso")
 
         super.onEnable()
 

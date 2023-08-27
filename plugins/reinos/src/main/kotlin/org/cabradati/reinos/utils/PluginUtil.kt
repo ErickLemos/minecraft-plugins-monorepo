@@ -10,3 +10,7 @@ fun registrarComando(
     getPluginContainerDI().getCommand(caminho)
         ?.setExecutor(executor)
 }
+
+fun info(mensagem: String) {
+    getPluginContainerDI().logger.info(mensagem)
+}

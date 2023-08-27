@@ -1,4 +1,4 @@
-package org.cabradati.reinos.utils
+package org.cabradati.reinos.utils.di
 
 import org.bukkit.Server
 import org.bukkit.configuration.file.FileConfiguration

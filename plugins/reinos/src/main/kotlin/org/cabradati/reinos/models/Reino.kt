@@ -1,19 +1,26 @@
 package org.cabradati.reinos.models
 
-import com.google.gson.annotations.SerializedName
+import com.google.cloud.firestore.annotation.DocumentId
+import com.google.cloud.firestore.annotation.PropertyName
 
 data class Reino(
 
-    @field:SerializedName("uid_player_lider")
+    @DocumentId
+    var uid: String = "",
+
+    @PropertyName("uid_player_lider")
     val uidPlayerLider: String = "",
 
-    @field:SerializedName("nome")
+    @PropertyName("nome")
     val nome: String = "",
 
-    @field:SerializedName("aliancas")
+    @PropertyName("aliancas")
     val aliancas: List<Alianca> = listOf(),
 
-    @field:SerializedName("guerras")
-    val guerras: List<Guerra> = listOf()
+    @PropertyName("guerras")
+    val guerras: List<Guerra> = listOf(),
+
+    @PropertyName("membros")
+    val membros: List<Membro> = listOf()
 
 )

@@ -1,6 +1,7 @@
 package org.cabradati.reinos.utils
 
 import org.bukkit.command.CommandExecutor
+import org.cabradati.reinos.utils.di.getPluginContainerDI
 
 fun registrarComando(
     caminho: String,

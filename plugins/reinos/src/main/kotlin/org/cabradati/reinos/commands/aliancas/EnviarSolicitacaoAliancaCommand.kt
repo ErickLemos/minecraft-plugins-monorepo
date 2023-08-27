@@ -4,6 +4,7 @@ import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
+import org.cabradati.reinos.models.SolicitacaoAlianca
 import org.cabradati.reinos.services.ReinosService
 import org.cabradati.reinos.services.SolicitacaoAliancaService
 
@@ -34,10 +35,13 @@ class EnviarSolicitacaoAliancaCommand : CommandExecutor {
             sender.sendMessage("reino informado não existe")
         }
 
-        solicitacaoAliancaService.enviarSolicitacao(
-            reinoSolicitanteRef.documents[0].id,
-            reinoConvidadoRef.documents[0].id
+        val solicitacaoAlianca = SolicitacaoAlianca(
+            nomeReinoSolicitante = checkNotNull(reinoSolicitanteRef.documents[0].getString("nome")),
+            uidReinoSolicitante = reinoSolicitanteRef.documents[0].id,
+            uidReinoConvidado = reinoConvidadoRef.documents[0].id
         )
+
+        solicitacaoAliancaService.enviarSolicitacao(solicitacaoAlianca)
 
         sender.sendMessage("solicitacao enviada com sucesso")
 

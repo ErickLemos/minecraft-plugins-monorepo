@@ -5,6 +5,9 @@ import org.cabradati.reinos.models.enums.StatusSolicitacao
 
 data class SolicitacaoAlianca(
 
+    @field:SerializedName("nome_reino_solicitante")
+    val nomeReinoSolicitante: String = "",
+
     @field:SerializedName("uid_reino_solicitante")
     val uidReinoSolicitante: String = "",
 

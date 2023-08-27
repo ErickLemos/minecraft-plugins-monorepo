@@ -20,17 +20,13 @@ class SolicitacaoAliancaService {
 
     fun getSolicitacoesByReinoConvidado(uid: String): ApiFuture<QuerySnapshot> {
         return firestore.collection(collection)
-            .whereEqualTo("uid_reino_convidado", uid)
+            .whereEqualTo("uidReinoConvidado", uid)
             .get()
     }
 
-    fun enviarSolicitacao(uidSolicitante: String, uidConvidado: String): ApiFuture<DocumentReference> {
+    fun enviarSolicitacao(solicitacaoAlianca: SolicitacaoAlianca): ApiFuture<DocumentReference> {
         return firestore.collection(collection)
-            .add(SolicitacaoAlianca(
-                uidReinoSolicitante = uidSolicitante,
-                uidReinoConvidado = uidConvidado,
-                StatusSolicitacao.PENDENTE
-            ))
+            .add(solicitacaoAlianca)
     }
 
 }

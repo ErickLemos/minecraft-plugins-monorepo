@@ -17,6 +17,11 @@ commands:
     description: remover reino
     usage: /<command>
 
-  adicionar-alianca:
+  enviar-convite-de-alianca:
     description: adicionar alianca ao reino
     usage: /<command>
+
+  consultar-convites-de-alianca:
+    description: consulta a lista de convites de alianca
+    usage: /<command>
+
